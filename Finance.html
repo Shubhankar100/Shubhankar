@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Finance Teams</title>
+    <link rel="stylesheet" type="text/css" href="finance.css">
+
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+        </style>
+</head>
+<body>
+    <header class="main"> 
+        Finance Teams
+    </header>
+
+    <div class="abc">
+
+        <script src="finance.js"></script>
+
+        <script>
+            document.write('<table>');
+            document.write('<th>Client</th>');
+            document.write('<th>Program</th>');
+            document.write('<th>Budget</th></tr>');
+            document.write('<br/>');
+
+
+            for(var i = 0; i < c.length; i++){
+                document.write('<tr><td>' +c[i].client+'</td>');
+                document.write('<td>' +c[i].program+'</td>');
+                document.write('<td>'+c[i].budget+'</td></tr>');
+                document.write('<br/>');
+            }
+            document.write('</table>');
+
+        </script>
+
+   </div>
+
+<div>
+<form action="Title.html">
+ <button type="submit">Back</button>
+</form>
+</div>
+
+   
+
+    
+</body>
+</html>
