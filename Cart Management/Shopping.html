@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" type="text/css" href="checkout.css">
+    <script src="shopping.js"></script>
+</head>
+<body>
+    <div class="Shopping"> 
+        <h2>Shopping Cart</h2><br/>
+        
+        <div>
+            <h1>Name: Mango</h1>
+            <h1>Price: 20</h1>
+            <button onclick="addToCart(['mango',20]);">Add</button>
+        </div>
+        <div>
+            <h1>Name: Orange</h1>
+            <h1>Price: 10</h1>
+            <button onclick="addToCart(['Orange',10]);">Add</button>
+        </div>
+        <div>
+            <h1>Name: Apple</h1>
+            <h1>Price: 30</h1>
+            <button onclick="addToCart(['Apple',30]);">Add</button>
+        </div>
+        <div>
+            <h1>Name: Tomato</h1>
+            <h1>Price: 1</h1>
+            <button onclick="addToCart(['Tomato',1]);">Add</button>
+        </div>
+        <h3> Cart Value:<p id='cartValue'>0</p> </h3><br/>
+        <a href="checkout.html" onclick="checkOut();">Checkout</a>
+    </div>
+</body>
+</html>
