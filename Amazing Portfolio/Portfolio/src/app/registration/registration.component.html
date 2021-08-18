@@ -1,0 +1,74 @@
+<div>
+    <h2>Registration Form</h2>
+
+    <form #loginRef="ngForm" (ngSubmit)="saveValues(loginRef)">
+        <label>First name:  </label>
+        <input type="text" name="fname" ngModel/> <br/>
+        <label> Last name:  </label>
+        <input type="text" name="lname" ngModel /> <br/>
+        <label>Username:  </label>
+        <input type="text" name="user" ngModel/> <br/>
+        <label> Password:  </label>
+        <input type="password" name="pass" ngModel/> <br/>
+            
+        <input type="submit" value="Register" (click)="clickevent()"/>
+        <input type="reset"  value="Reset"/>
+        <br/>
+    
+    </form>
+    <hr/>
+</div>
+
+
+<div *ngIf="showform">
+
+    <h2>Login Form</h2>
+
+    <form #newRef="ngForm" (ngSubmit)="loginValues(newRef)">        
+           <label>Username: </label>
+           <input type ="text" name = "user" ngModel /><br/>
+           <label>Password:  </label>
+           <input type="password" name ="pass" ngModel /><br/>
+           <input type="submit" value="Login" (click)="showevent()"/> <br/>
+        
+        {{msg}}
+    </form>
+
+    <hr/>
+    <hr/>
+</div>
+
+
+<div *ngIf="newform">
+
+<h2>MyPortFolio</h2>
+<h3>Welcome {{username}}</h3>
+    
+    
+<form >
+    
+    <label>Contact name:</label>
+    <input type="text" #nameRef> <br/>
+
+    <label> Phone No:  </label>
+    <input type="number" #phnRef/> <br/>
+    <br/>
+
+    <input type="button" value="save" (click)="addName(nameRef, phnRef)"/> <br/>
+    
+
+</form>
+
+<table border="1">
+            <tr>
+                <th>Contact Name</th>
+                <th>Phone No</th>
+            </tr>
+            <tr >
+                <td *ngFor="let c_name of contact">{{c_name}}</td>
+                <td *ngFor="let phn of phone_number">{{phn}}</td>
+            </tr>
+</table>
+    
+</div>
+
