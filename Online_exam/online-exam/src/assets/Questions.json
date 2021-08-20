@@ -1,0 +1,372 @@
+[
+  {
+    "id": 1010,
+    "name": "1. Which HTML tag do we use to put the JavaScript?",
+    "questionTypeId": 1,
+    "resultMessage": "",
+    "options": [
+      {
+        "id": 1055,
+        "questionId": 1010,
+        "name": "<javascript>",
+        "isAnswer": false
+      },
+      {
+        "id": 1056,
+        "questionId": 1010,
+        "name": "<script>",
+        "isAnswer": true
+      },
+      {
+        "id": 1057,
+        "questionId": 1010,
+        "name": "<js>",
+        "isAnswer": false
+      },
+      {
+        "id": 1058,
+        "questionId": 1010,
+        "name": "None of the above",
+        "isAnswer": false
+      }
+    ],
+    "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+    }
+  },
+  {
+    "id": 1011,
+    "name": "2. Which are types of Data binding ? a. String Interpolation b. Property Binding c. Event Binding d. Two way Binding",
+    "questionTypeId": 1,
+    "resultMessage": "",
+    "options": [
+      {
+        "id": 1055,
+        "questionId": 1010,
+        "name": "a,b,c",
+        "isAnswer": false
+      },
+      {
+        "id": 1057,
+        "questionId": 1010,
+        "name": "b,c,d",
+        "isAnswer": false
+      },
+      {
+        "id": 1056,
+        "questionId": 1010,
+        "name": "a,b,c,d",
+        "isAnswer": true
+      },
+      {
+        "id": 1058,
+        "questionId": 1010,
+        "name": "a,d",
+        "isAnswer": false
+      }
+    ],
+    "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+    }
+  },
+  {
+    "id": 1012,
+    "name": "3. What are directives in Angular?",
+    "questionTypeId": 1,
+    "resultMessage": "",
+    "options": [
+      {
+        "id": 1055,
+        "questionId": 1010,
+        "name": "Attribute Directives",
+        "isAnswer": false
+      },
+      {
+        "id": 1057,
+        "questionId": 1010,
+        "name": "Component Directives",
+        "isAnswer": false
+      },
+      {
+        "id": 1056,
+        "questionId": 1010,
+        "name": "Structural Directives",
+        "isAnswer": false
+      },
+      {
+        "id": 1058,
+        "questionId": 1010,
+        "name": "All of the Above",
+        "isAnswer": true
+      }
+    ],
+    "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+    }
+  },
+  {
+    "id": 1013,
+    "name": "4 .What is TypeScript?",
+    "questionTypeId": 1,
+    "resultMessage": "",
+    "options": [
+      {
+        "id": 1055,
+        "questionId": 1010,
+        "name": "A Language based on Javascript",
+        "isAnswer": true
+      },
+      {
+        "id": 1057,
+        "questionId": 1010,
+        "name": "script that runs on browser",
+        "isAnswer": false
+      },
+      {
+        "id": 1056,
+        "questionId": 1010,
+        "name": "A DataType Collection of Javascript",
+        "isAnswer": false
+      },
+      {
+        "id": 1058,
+        "questionId": 1010,
+        "name": "None of the above",
+        "isAnswer": false
+      }
+    ],
+    "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+    }
+  },
+  {
+    "id": 1014,
+    "name": "5 .How is string interpolation implemented in Angular?",
+    "questionTypeId": 1,
+    "resultMessage": "",
+    "options": [
+      {
+        "id": 1055,
+        "questionId": 1010,
+        "name": "[]",
+        "isAnswer": false
+      },
+      {
+        "id": 1057,
+        "questionId": 1010,
+        "name": "()",
+        "isAnswer": false
+      },
+      {
+        "id": 1056,
+        "questionId": 1010,
+        "name": "{{}}",
+        "isAnswer": false
+      },
+      {
+        "id": 1058,
+        "questionId": 1010,
+        "name": "{()}",
+        "isAnswer": true
+      }
+    ],
+    "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+    }
+  },
+  {
+    "id": 1015,
+    "name": "6 .Which new ES6 syntax helps with formatting output text - mixing variables with string literals, for example.",
+    "questionTypeId": 1,
+    "resultMessage": "",
+    "options": [
+      {
+        "id": 1055,
+        "questionId": 1010,
+        "name": "Generator Functions",
+        "isAnswer": false
+      },
+      {
+        "id": 1057,
+        "questionId": 1010,
+        "name": "Arrow Functions",
+        "isAnswer": false
+      },
+      {
+        "id": 1056,
+        "questionId": 1010,
+        "name": "Template Strings",
+        "isAnswer": true
+      },
+      {
+        "id": 1058,
+        "questionId": 1010,
+        "name": "Set Data Structure",
+        "isAnswer": false
+      }
+    ],
+    "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+    }
+  },
+  {
+    "id": 1016,
+    "name": "7 .What are the JSX modes TypeScript supports?",
+    "questionTypeId": 1,
+    "resultMessage": "",
+    "options": [
+      {
+        "id": 1055,
+        "questionId": 1010,
+        "name": "preserve",
+        "isAnswer": false
+      },
+      {
+        "id": 1056,
+        "questionId": 1010,
+        "name": "react",
+        "isAnswer": true
+      },
+      {
+        "id": 1057,
+        "questionId": 1010,
+        "name": "react-native",
+        "isAnswer": false
+      },
+      {
+        "id": 1058,
+        "questionId": 1010,
+        "name": "All of the Above",
+        "isAnswer": true
+      }
+    ],
+    "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+    }
+  },
+  {
+    "id": 1017,
+    "name": "8. What of the following is not a built-in data types of TypeScript?",
+    "questionTypeId": 1,
+    "resultMessage": "",
+    "options": [
+      {
+        "id": 1055,
+        "questionId": 1010,
+        "name": "Number Type",
+        "isAnswer": false
+      },
+      {
+        "id": 1056,
+        "questionId": 1010,
+        "name": "String type",
+        "isAnswer": false
+      },
+      {
+        "id": 1057,
+        "questionId": 1010,
+        "name": "Null type",
+        "isAnswer": false
+      },
+      {
+        "id": 1058,
+        "questionId": 1010,
+        "name": "Full type",
+        "isAnswer": true
+      }
+    ],
+    "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+    }
+  },
+  {
+    "id": 1018,
+    "name": "9. Which of the following is NOT the method of an Array?",
+    "questionTypeId": 1,
+    "resultMessage": "",
+    "options": [
+      {
+        "id": 1055,
+        "questionId": 1010,
+        "name": ".map()",
+        "isAnswer": false
+      },
+      {
+        "id": 1057,
+        "questionId": 1010,
+        "name": ".includes()",
+        "isAnswer": false
+      },
+      {
+        "id": 1056,
+        "questionId": 1010,
+        "name": ".subscribe()",
+        "isAnswer": true
+      },
+      {
+        "id": 1058,
+        "questionId": 1010,
+        "name": ".flatMap()",
+        "isAnswer": false
+      }
+    ],
+    "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+    }
+  },
+  {
+    "id": 1019,
+    "name": "10. What are the main features of TypeScript ?",
+    "questionTypeId": 1,
+    "resultMessage": "",
+    "options": [
+      {
+        "id": 1055,
+        "questionId": 1010,
+        "name": "Cross-Platform",
+        "isAnswer": false
+      },
+      {
+        "id": 1056,
+        "questionId": 1010,
+        "name": "ES6 Features",
+        "isAnswer": false
+      },
+      {
+        "id": 1057,
+        "questionId": 1010,
+        "name": "DOM Manipulation",
+        "isAnswer": false
+      },
+      {
+        "id": 1058,
+        "questionId": 1010,
+        "name": "All of the Above",
+        "isAnswer": true
+      }
+    ],
+    "questionType": {
+      "id": 1,
+      "name": "Multiple Choice",
+      "isActive": true
+    }
+  }
+]
