@@ -1,0 +1,57 @@
+[
+    {
+        "_id" : 1, 
+        "source" : "9988776655", 
+        "destination":"9123456789", 
+        "sourceLocation":"Bangalore", 
+        "destinationLocation":"Delhi", 
+        "callDuration":"00:10:00", 
+        "roaming":"No", 
+        "callCharge":"10"
+    },{
+        "_id" : 2, 
+        "source" : "9988776672", 
+        "destination":"9123456790", 
+        "sourceLocation":"Uttrakhand", 
+        "destinationLocation":"Mysore", 
+        "callDuration":"00:16:00", 
+        "roaming":"Yes", 
+        "callCharge":"20"
+    },{
+        "_id" : 3, 
+        "source" : "9188776633", 
+        "destination":"9223456722", 
+        "sourceLocation":"Chennai", 
+        "destinationLocation":"Mumbai", 
+        "callDuration":"00:13:00", 
+        "roaming":"Yes", 
+        "callCharge":"18"
+    },{
+        "_id" : 4, 
+        "source" : "9118776659", 
+        "destination":"9233456786", 
+        "sourceLocation":"Rajasthan", 
+        "destinationLocation":"Chandigarh", 
+        "callDuration":"00:5:00", 
+        "roaming":"No", 
+        "callCharge":"6"
+    },{
+        "_id" : 5, 
+        "source" : "9558776651", 
+        "destination":"9773456781", 
+        "sourceLocation":"Sikkim", 
+        "destinationLocation":"MP", 
+        "callDuration":"00:3:00", 
+        "roaming":"Yes", 
+        "callCharge":"10"
+    },{
+        "_id" : 6, 
+        "source" : "9558776651", 
+        "destination":"9773456781", 
+        "sourceLocation":"Delhi", 
+        "destinationLocation":"Uttrakhand", 
+        "callDuration":"00:3:00", 
+        "roaming":"Yes", 
+        "callCharge":"10"
+    }
+]
