@@ -25,14 +25,18 @@ export class RegisterNormalUserComponent implements OnInit {
     let registerForm = registerRef.value;
 
     // Make sure the passwords match
-    let pass1 = registerForm.password;
-    let pass2 = registerForm.repassword;
-    if (pass1 != pass2) {
+    if (registerForm.password != registerForm.repassword) {
       this.registrationMessage = "Error: Passwords do not match";
-      return;
     }
+    else { // Registration success
+      let userId = this.genRandomId();
+      this.registrationMessage = "";
+      // TODO: there is a small chance of duplicate ids, find a way to prevent it
+      alert("Registration successful! Your user ID is: " + userId);
 
-    // Grab the user input from the fields
+      // _id, firstname, lastname, email, dob, address, password
+      let userAccount = {_id:userId, firstname:registerForm.firstname, lastname:registerForm.lastname, email:registerForm.email, dob:registerForm.dob, phone:registerForm.phone, address:registerForm.address, password:registerForm.password};
+    }
   }
 
 }
