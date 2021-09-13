@@ -31,11 +31,12 @@ export class RegisterNormalUserComponent implements OnInit {
     else { // Registration success
       let userId = this.genRandomId();
       this.registrationMessage = "";
-      // TODO: there is a small chance of duplicate ids, find a way to prevent it
+      // TODO: there is a small chance of duplicate ids, find a way to prevent it?
       alert("Registration successful! Your user ID is: " + userId);
 
       // _id, firstname, lastname, email, dob, address, password
       let userAccount = {_id:userId, firstname:registerForm.firstname, lastname:registerForm.lastname, email:registerForm.email, dob:registerForm.dob, phone:registerForm.phone, address:registerForm.address, password:registerForm.password};
+      
     }
   }
 

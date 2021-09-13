@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { UserPanelComponent } from './user-panel/user-panel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterNormalUserComponent } from './register-normal-user/register-normal-user.component';
+import { FirstPageComponent } from './first-page/first-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserPanelComponent,
-    RegisterNormalUserComponent
+    RegisterNormalUserComponent,
+    FirstPageComponent
   ],
   imports: [
     BrowserModule,
