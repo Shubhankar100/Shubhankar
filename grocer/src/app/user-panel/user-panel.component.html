@@ -1,6 +1,6 @@
 <div>
     <h1>User Panel</h1>
-    <form [formGroup]="loginRef" (ngSubmit)="checkUser()">
+    <form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)">
         <label>Username:</label>
         <input type="text" name="username"><br>
         <label>Password:</label>
@@ -8,7 +8,7 @@
         <input type="submit" value="Sign in">
     </form>
     <p>Don't have an account? </p>
-    <input type="button" value="Register" id="btnRegister"><br>
+    <a routerLink="registerUser">Register</a>
     <br>
     <p>Raise a support ticket</p>
 </div>
