@@ -1,5 +1,7 @@
 <div>
     <h2>Register New User</h2>
+    <a routerLink="/userLogin">Back to Login</a>
+    <br><br>
     <form #registerRef="ngForm" (ngSubmit)="registerUser(registerRef)">
         <label>First name:</label>
         <input type="text" name="firstname" ngModel required><br>

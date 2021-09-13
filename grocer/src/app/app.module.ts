@@ -7,6 +7,8 @@ import { UserPanelComponent } from './user-panel/user-panel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterNormalUserComponent } from './register-normal-user/register-normal-user.component';
 import { FirstPageComponent } from './first-page/first-page.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,13 @@ import { FirstPageComponent } from './first-page/first-page.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
