@@ -1,22 +1,23 @@
 <div>
     <h2>Register New User</h2>
-    <form #regsiterRef="ngForm" (ngSubmit)="registerUser(registerRef)">
+    <form #registerRef="ngForm" (ngSubmit)="registerUser(registerRef)">
         <label>First name:</label>
-        <input type="text" name="firstname"><br>
+        <input type="text" name="firstname" ngModel required><br>
         <label>Last name:</label>
-        <input type="text" name="lastname"><br>
+        <input type="text" name="lastname" ngModel required><br>
         <label>Email:</label>
-        <input type="email" name="email"><br>
+        <input type="email" name="email" ngModel required><br>
         <label>Date of Birth:</label>
-        <input type="date" name="dob"><br>
+        <input type="date" name="dob" ngModel required><br>
         <label>Phone Number:</label>
-        <input type="text" name="phone"><br>
+        <input type="text" name="phone" ngModel required><br>
         <label>Address:</label>
-        <input type="text" name="address"><br>
+        <input type="text" name="address" ngModel required><br>
         <label>Password:</label>
-        <input type="password" name="password"><br>
+        <input type="password" name="password" ngModel required><br>
         <label>Confirm password:</label>
-        <input type="password" name="repassword"><br>
-        <input type="submit" value="Register">
+        <input type="password" name="repassword" ngModel required><br>
+        <input type="submit" value="Register" [disabled]="registerRef.invalid">
     </form>
+    <p>{{registrationMessage}}</p>
 </div>
