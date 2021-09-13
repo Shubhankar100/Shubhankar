@@ -1,6 +1,6 @@
 <div>
     <h1>User Panel</h1>
-    <form>
+    <form [formGroup]="loginRef" (ngSubmit)="checkUser()">
         <label>Username:</label>
         <input type="text" name="username"><br>
         <label>Password:</label>
