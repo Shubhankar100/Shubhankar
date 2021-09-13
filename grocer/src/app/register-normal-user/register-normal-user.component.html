@@ -1,6 +1,6 @@
 <div>
     <h2>Register New User</h2>
-    <form>
+    <form #regsiterRef="ngForm" (ngSubmit)="registerUser(registerRef)">
         <label>First name:</label>
         <input type="text" name="firstname"><br>
         <label>Last name:</label>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register-normal-user',
@@ -10,6 +11,10 @@ export class RegisterNormalUserComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  registerUser(registerRef:NgForm) {
+    let registerForm = registerRef.value;
   }
 
 }
