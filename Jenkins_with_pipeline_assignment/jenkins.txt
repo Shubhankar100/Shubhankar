@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Check Node version') {
+            steps {
+                echo 'Node Version Verified'
+            }
+        }
+        stage('Build the version') {
+            steps {
+                echo 'Right version built'
+            }
+        }
+        stage('Testing the version') {
+            steps {
+                echo 'Right Version has been tested successfully'
+            }
+        }
+        stage('Deploying the version') {
+            steps {
+                echo 'The right version has been deployed'
+            }
+        }
+    }
+}
