@@ -8,6 +8,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterNormalUserComponent } from './register-normal-user/register-normal-user.component';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -22,6 +25,9 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
