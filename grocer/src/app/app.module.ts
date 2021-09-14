@@ -15,13 +15,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { environment } from '../environments/environment';
+import { AdminSandboxComponent } from './admin-sandbox/admin-sandbox.component';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserPanelComponent,
     RegisterNormalUserComponent,
-    FirstPageComponent
+    FirstPageComponent,
+    AdminSandboxComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,
