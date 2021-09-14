@@ -1,0 +1,22 @@
+<div>
+    <h1>User Login</h1>
+    <a routerLink="">Go Back</a>
+    <form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)">
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput name="username" ngModel required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" name="password" ngModel required>
+        </mat-form-field>
+        <br>
+        <button type="submit" mat-raised-button color="primary" [disabled]="loginRef.invalid">Login</button>
+    </form>
+    <br>
+    <label>Don't have an account? </label>
+    <a routerLink="/registerUser">Register</a>
+    <br>
+    <p>Raise a support ticket</p>
+</div>

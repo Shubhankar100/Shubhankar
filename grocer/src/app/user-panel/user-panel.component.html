@@ -1,15 +1,17 @@
 <div>
     <h1>User Panel</h1>
-    <form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)">
-        <label>Username:</label>
-        <input type="text" name="username"><br>
-        <label>Password:</label>
-        <input type="password" name="password"><br>
-        <input type="submit" value="Sign in">
-    </form>
-    <br>
-    <label>Don't have an account? </label>
-    <a routerLink="/registerUser">Register</a>
-    <br>
-    <p>Raise a support ticket</p>
+    <mat-tab-group style="text-align: center;">
+        <mat-tab label="Shop">
+            <!--"Select items" function-->
+        </mat-tab>
+        <mat-tab label="Orders">
+            <!--Order functions-->
+        </mat-tab>
+        <mat-tab label="Edit Profile">
+            <!--Edit profile functions-->
+        </mat-tab>
+        <mat-tab label="Add Funds">
+            <!--Funding functions-->
+        </mat-tab>
+    </mat-tab-group>
 </div>

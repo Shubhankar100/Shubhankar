@@ -12,16 +12,13 @@ export class UserPanelComponent implements OnInit {
   orderFlag:boolean=false;
   profileFlag:boolean=false;
   fundsFlag:boolean=false;
-  
+
 
   constructor(public router:Router) { }
 
   ngOnInit(): void {
   }
 
-  checkUser(loginRef:NgForm) {
-
-  }
 
   orderStatus(UserId:string){
     let tableHead = "<tr><th>Order ID</th><th>Order Status</th></tr>";

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-normal-user',
@@ -9,15 +10,17 @@ import { NgForm } from '@angular/forms';
 export class RegisterNormalUserComponent implements OnInit {
   // Message for form validation
   registrationMessage:string = "";
+  // Default amount of funds for new users
+  newUserFunds:number = 100;
 
-  constructor() { }
+  constructor(public router:Router) { }
 
   ngOnInit(): void {
   }
 
   // Gets a random number from 100,000 to 999,999
   genRandomId(): number {
-    return (Math.random() * (999999 - 100000) + 100000);
+    return Math.round(Math.random() * (999999 - 100000) + 100000);
   }
 
   // Called when the user hits the submit button
@@ -35,8 +38,9 @@ export class RegisterNormalUserComponent implements OnInit {
       alert("Registration successful! Your user ID is: " + userId);
 
       // _id, firstname, lastname, email, dob, address, password
-      let userAccount = {_id:userId, firstname:registerForm.firstname, lastname:registerForm.lastname, email:registerForm.email, dob:registerForm.dob, phone:registerForm.phone, address:registerForm.address, password:registerForm.password};
+      let userAccount = {_id:userId, firstname:registerForm.firstname, lastname:registerForm.lastname, email:registerForm.email, dob:registerForm.dob, phone:registerForm.phone, address:registerForm.address, password:registerForm.password, funds:this.newUserFunds};
       
+      this.router.navigateByUrl("/userLogin");
     }
   }
 
