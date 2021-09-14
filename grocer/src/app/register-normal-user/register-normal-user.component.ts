@@ -28,6 +28,7 @@ export class RegisterNormalUserComponent implements OnInit {
     return Math.round(Math.random() * (999999 - 100000) + 100000);
   }
 
+  // Opens a dialog box notifying the user of their ID
   openDialog(userid:number): void {
     this.dialog.open(DialogRegisterDialog, {
       data: {
