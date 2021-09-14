@@ -17,6 +17,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { environment } from '../environments/environment';
 import { UserLoginComponent } from './user-login/user-login.component';
+import { AdminPortalComponent } from "./admin/admin-portal/admin-portal.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UserLoginComponent } from './user-login/user-login.component';
     UserPanelComponent,
     RegisterNormalUserComponent,
     FirstPageComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    AdminPortalComponent
   ],
   imports: [
     BrowserModule,
