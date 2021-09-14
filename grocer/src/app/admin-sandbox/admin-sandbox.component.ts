@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-sandbox',
@@ -10,6 +11,14 @@ export class AdminSandboxComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addEmployee(addEmployeeRef:NgForm) {
+
+  }
+
+  deleteEmployee(delEmployeeRef:NgForm) {
+    
   }
 
 }

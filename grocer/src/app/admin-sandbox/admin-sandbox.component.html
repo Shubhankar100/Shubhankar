@@ -1,11 +1,29 @@
 <div>
     <h2>Admin Sandbox</h2>
     <p>Test functions:</p>
-    <input type="button" value="Add Employee">
-    <br><br>
-    <input type="button" value="Delete Employee">
-    <br><br>
-    <input type="button" value="Generate Reports">
-    <br><br>
     <a routerLink="">Logout</a>
+    <mat-tab-group>
+        <mat-tab label="Add Employee">
+            <!--Add employee form-->
+            <h2>Add an Employee Account</h2>
+            <form #addEmployeeRef="ngForm" (ngSubmit)="addEmployee(addEmployeeRef)">
+
+            </form>
+        </mat-tab>
+        <mat-tab label="Delete Employee">
+            <!--Delete employee form-->
+            <h2>Delete an Employee Account</h2>
+            <form #delEmployeeRef="ngForm" (ngSubmit)="deleteEmployee(delEmployeeRef)">
+                <mat-form-field>
+                    <mat-label>Employee ID</mat-label>
+                    <input matInput name="empid" ngModel required>
+                </mat-form-field>
+                <br>
+                <button type="submit" mat-raised-button color="primary" [disabled]="delEmployeeRef.invalid">Delete</button>
+            </form>
+        </mat-tab>
+        <mat-tab label="Generate Reports">
+            <!--Generate reports-->
+        </mat-tab>
+    </mat-tab-group>
 </div>
