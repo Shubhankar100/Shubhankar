@@ -18,6 +18,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { AdminSandboxComponent } from './admin-sandbox/admin-sandbox.component';
 import { UserLoginComponent } from './user-login/user-login.component';
@@ -46,6 +47,7 @@ import { UserLoginComponent } from './user-login/user-login.component';
     MatSelectModule,
     MatIconModule,
     MatDialogModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

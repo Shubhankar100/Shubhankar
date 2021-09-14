@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 export interface DialogData {
   uid:number;
@@ -18,9 +19,10 @@ export class RegisterNormalUserComponent implements OnInit {
   // Default amount of funds for new users
   newUserFunds:number = 100;
 
-  constructor(public router:Router, public dialog:MatDialog) { }
+  constructor(public router:Router, public dialog:MatDialog, private userService:UserService) { }
 
   ngOnInit(): void {
+    
   }
 
   // Gets a random number from 100,000 to 999,999
@@ -53,7 +55,9 @@ export class RegisterNormalUserComponent implements OnInit {
       this.openDialog(userId);
 
       // _id, firstname, lastname, email, dob, address, password
-      let userAccount = {_id:userId, firstname:registerForm.firstname, lastname:registerForm.lastname, email:registerForm.email, dob:registerForm.dob, phone:registerForm.phone, address:registerForm.address, password:registerForm.password, funds:this.newUserFunds};
+      let userAccount = {_id:userId, firstname:registerForm.firstname, lastname:registerForm.lastname, 
+        email:registerForm.email, dob:registerForm.dob, phone:registerForm.phone, address:registerForm.address, 
+        password:registerForm.password, funds:this.newUserFunds};
       
       this.router.navigateByUrl("/userLogin");
     }
