@@ -14,8 +14,4 @@ export class UserPanelComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  checkUser(loginRef:NgForm) {
-
-  }
-
 }
