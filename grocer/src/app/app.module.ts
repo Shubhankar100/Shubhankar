@@ -16,7 +16,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { environment } from '../environments/environment';
-import { AdminSandboxComponent } from './admin-sandbox/admin-sandbox.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 
 @NgModule({
@@ -25,7 +24,6 @@ import { UserLoginComponent } from './user-login/user-login.component';
     UserPanelComponent,
     RegisterNormalUserComponent,
     FirstPageComponent,
-    AdminSandboxComponent,
     UserLoginComponent
   ],
   imports: [
