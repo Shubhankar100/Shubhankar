@@ -3,27 +3,29 @@
     <br><br>
     <form class="form-dimensions" #registerRef="ngForm" (ngSubmit)="registerUser(registerRef)">
         <h2>New User Registration</h2>
-        <mat-form-field>
+        <mat-form-field style="width: 35%;">
             <mat-label>First name</mat-label>
             <input matInput name="firstname" ngModel required>
         </mat-form-field>
-        <mat-form-field>
+        &nbsp;
+        <mat-form-field style="width: 35%;">
             <mat-label>Last name</mat-label>
             <input matInput name="lastname" ngModel required>
         </mat-form-field>
         <br>
         <mat-form-field class="full-width">
             <mat-label>Email</mat-label>
-            <input matInput type="email" placeholder="john@example.com" name="email" ngModel required>
+            <input matInput type="email" placeholder="Ex. john@example.com" name="email" ngModel required>
         </mat-form-field>
         <br>
-        <mat-form-field>
+        <mat-form-field style="width: 25%;">
             <mat-label>Date of Birth</mat-label>
             <input matInput [matDatepicker]="picker" name="dob" ngModel required>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-        <mat-form-field>
+        &nbsp;
+        <mat-form-field style="width: 45%;">
             <mat-label>Phone Number</mat-label>
             <input matInput name="phone" type="tel" ngModel required>
         </mat-form-field>

@@ -7,11 +7,12 @@
             <!--Add employee form-->
             <h2>Add an Employee Account</h2>
             <form class="form-dimensions" #addEmployeeRef="ngForm" (ngSubmit)="addEmployee(addEmployeeRef)">
-                <mat-form-field>
+                <mat-form-field style="width: 35%;">
                     <mat-label>First Name</mat-label>
                     <input matInput name="firstname" ngModel required>
                 </mat-form-field>
-                <mat-form-field>
+                &nbsp;
+                <mat-form-field style="width: 35%;">
                     <mat-label>Last Name</mat-label>
                     <input matInput name="lastname" ngModel required>
                 </mat-form-field>
@@ -43,6 +44,31 @@
         </mat-tab>
         <mat-tab label="Generate Reports">
             <!--Generate reports-->
+            <h2>Generate Reports</h2>
+            <form class="form-dimensions" #reportRef="ngForm" (ngSubmit)="generateReports(reportRef)">
+                <mat-form-field>
+                    <mat-label>Time</mat-label>
+                    <select matNativeControl ngModel required>
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <mat-label>User ID</mat-label>
+                    <input matInput name="userId">
+                </mat-form-field>
+                &nbsp;
+                <mat-form-field>
+                    <mat-label>Product Name</mat-label>
+                    <input matInput name="productId">
+                </mat-form-field>
+                <br>
+                <button type="submit" mat-raised-button color="primary" [disabled]="reportRef.invalid">Generate</button>
+            </form>
+            <br>
+            <hr>
         </mat-tab>
     </mat-tab-group>
 </div>

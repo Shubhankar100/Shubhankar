@@ -14,10 +14,16 @@ export class AdminSandboxComponent implements OnInit {
   }
 
   addEmployee(addEmployeeRef:NgForm): void {
+    let employeeForm = addEmployeeRef.value;
 
   }
 
   deleteEmployee(delEmployeeRef:NgForm): void {
+    let employeeForm = delEmployeeRef.value;
+
+  }
+
+  generateReports(reportRef:NgForm): void {
     
   }
 
