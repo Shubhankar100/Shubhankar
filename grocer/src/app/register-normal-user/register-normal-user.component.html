@@ -1,4 +1,5 @@
 <div>
+    <h1>Grocery HUB</h1>
     <form class="form-dimensions" #registerRef="ngForm" (ngSubmit)="registerUser(registerRef)">
         <button mat-fab color="warn" aria-label="Back to Login" routerLink="/userLogin">
             <mat-icon>arrow_back</mat-icon>
@@ -28,7 +29,8 @@
         &nbsp;
         <mat-form-field style="width: 45%;">
             <mat-label>Phone Number</mat-label>
-            <input matInput name="phone" type="tel" ngModel required>
+            <span matPrefix>+1 &nbsp;</span>
+            <input matInput name="phone" type="tel" placeholder="Ex. 555-555-1234" ngModel required>
         </mat-form-field>
         <br>
         <mat-form-field class="full-width">
@@ -38,7 +40,7 @@
         <br>
         <mat-form-field class="full-width">
             <mat-label>Password</mat-label>
-            <input matInput type="password" name="password" minlength="6" ngModel required>
+            <input matInput type="password" name="password" ngModel required>
         </mat-form-field>
         <br>
         <mat-form-field class="full-width">
