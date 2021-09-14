@@ -1,8 +1,8 @@
 <div>
-    <h2>Register New User</h2>
     <a routerLink="/userLogin">Back to Login</a>
     <br><br>
-    <form #registerRef="ngForm" (ngSubmit)="registerUser(registerRef)">
+    <form class="form-dimensions" #registerRef="ngForm" (ngSubmit)="registerUser(registerRef)">
+        <h2>New User Registration</h2>
         <mat-form-field>
             <mat-label>First name</mat-label>
             <input matInput name="firstname" ngModel required>
@@ -12,47 +12,38 @@
             <input matInput name="lastname" ngModel required>
         </mat-form-field>
         <br>
-        <mat-form-field>
+        <mat-form-field class="full-width">
             <mat-label>Email</mat-label>
-            <input matInput name="email" ngModel required>
+            <input matInput type="email" placeholder="john@example.com" name="email" ngModel required>
         </mat-form-field>
+        <br>
         <mat-form-field>
             <mat-label>Date of Birth</mat-label>
             <input matInput [matDatepicker]="picker" name="dob" ngModel required>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-        <br>
         <mat-form-field>
             <mat-label>Phone Number</mat-label>
-            <input matInput name="phone" ngModel required>
+            <input matInput name="phone" type="tel" ngModel required>
         </mat-form-field>
-        <mat-form-field>
+        <br>
+        <mat-form-field class="full-width">
             <mat-label>Address</mat-label>
             <input matInput name="address" ngModel required>
         </mat-form-field>
         <br>
-        <mat-form-field>
+        <mat-form-field class="full-width">
             <mat-label>Password</mat-label>
-            <input matInput type="password" name="password" ngModel required>
+            <input matInput type="password" name="password" minlength="6" ngModel required>
         </mat-form-field>
         <br>
-        <mat-form-field>
+        <mat-form-field class="full-width">
             <mat-label>Confirm Password</mat-label>
             <input matInput type="password" name="repassword" ngModel required>
         </mat-form-field>
         <br>
         <button type="submit" mat-raised-button color="primary" [disabled]="registerRef.invalid">Register</button>
-        <!-- 
-        <mat-label>Phone Number:</mat-label>
-        <input matInput name="phone" ngModel required><br>
-        <mat-label>Address:</mat-label>
-        <input matInput name="address" ngModel required><br>
-        <mat-label>Password:</mat-label>
-        <input type="password" name="password" ngModel required><br>
-        <mat-label>Confirm password:</mat-label>
-        <input type="password" name="repassword" ngModel required><br>
-        <input type="submit" value="Register" [disabled]="registerRef.invalid"> -->
+        <p style="color: red;">{{registrationMessage}}</p>
     </form>
-    <p>{{registrationMessage}}</p>
 </div>

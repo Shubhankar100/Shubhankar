@@ -1,11 +1,17 @@
 <div>
     <h1>User Panel</h1>
     <form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)">
-        <label>Username:</label>
-        <input type="text" name="username"><br>
-        <label>Password:</label>
-        <input type="password" name="password"><br>
-        <input type="submit" value="Sign in">
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput name="username" ngModel required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" name="password" ngModel required>
+        </mat-form-field>
+        <br>
+        <button type="submit" mat-raised-button color="primary" [disabled]="loginRef.invalid">Login</button>
     </form>
     <br>
     <label>Don't have an account? </label>
