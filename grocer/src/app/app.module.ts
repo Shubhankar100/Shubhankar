@@ -18,6 +18,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { environment } from '../environments/environment';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { AdminPortalComponent } from "./admin/admin-portal/admin-portal.component";
+import { LoginComponent } from "./login/login.component";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AdminPortalComponent } from "./admin/admin-portal/admin-portal.componen
     RegisterNormalUserComponent,
     FirstPageComponent,
     UserLoginComponent,
-    AdminPortalComponent
+    AdminPortalComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
