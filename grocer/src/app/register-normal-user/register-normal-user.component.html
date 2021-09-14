@@ -1,8 +1,9 @@
 <div>
-    <a routerLink="/userLogin">Back to Login</a>
-    <br><br>
     <form class="form-dimensions" #registerRef="ngForm" (ngSubmit)="registerUser(registerRef)">
-        <h2>New User Registration</h2>
+        <button mat-fab color="warn" aria-label="Back to Login" routerLink="/userLogin">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <h1>New User Registration</h1>
         <mat-form-field style="width: 35%;">
             <mat-label>First name</mat-label>
             <input matInput name="firstname" ngModel required>
