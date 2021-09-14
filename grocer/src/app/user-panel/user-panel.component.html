@@ -6,6 +6,9 @@
         </mat-tab>
         <mat-tab label="Orders">
             <!--Order functions-->
+            <br/>
+            <button type="button" (click)="orderStatus()">Load Orders</button><br/><br/>
+            <div [innerHTML]="orderTable"></div>
         </mat-tab>
         <mat-tab label="Edit Profile">
             <!--Edit profile functions-->

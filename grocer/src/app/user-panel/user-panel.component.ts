@@ -13,6 +13,8 @@ export class UserPanelComponent implements OnInit {
   profileFlag:boolean=false;
   fundsFlag:boolean=false;
 
+  orderTable:string="";
+
 
   constructor(public router:Router) { }
 
@@ -20,11 +22,12 @@ export class UserPanelComponent implements OnInit {
   }
 
 
-  orderStatus(UserId:string){
-    let tableHead = "<tr><th>Order ID</th><th>Order Status</th></tr>";
+  orderStatus(){
+    let tableHead = "<table><tr><th>Order ID</th><th>Order Status</th></tr>";
     let tableRowStart = "<tr><td>";
     let tableRowMid = "</td><td>";
     let tableRowEnd = "</td></tr>";
+    let tableEnd = "</table>"
     let tableContents = tableHead;
 
     //Insert an service function that grabs the orders
@@ -41,7 +44,7 @@ export class UserPanelComponent implements OnInit {
     //   tableContents+=newRow;
     // }
 
-    //document.getElementById("order_table").innerHTML=tableContents
+    this.orderTable=tableContents+tableEnd;
   }
 
 }
