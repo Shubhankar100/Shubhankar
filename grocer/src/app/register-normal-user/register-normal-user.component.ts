@@ -26,6 +26,7 @@ export class RegisterNormalUserComponent implements OnInit {
   }
 
   // Gets a random number from 100,000 to 999,999
+  // TODO: there is a small chance of duplicate ids, find a way to prevent it?
   genRandomId(): number {
     return Math.round(Math.random() * (999999 - 100000) + 100000);
   }
@@ -50,8 +51,7 @@ export class RegisterNormalUserComponent implements OnInit {
     else { // Registration success
       let userId = this.genRandomId();
       this.registrationMessage = "";
-      // TODO: there is a small chance of duplicate ids, find a way to prevent it?
-      //alert("Registration successful! Your user ID is: " + userId);
+      // Notify the user of their user id
       this.openDialog(userId);
 
       // _id, firstname, lastname, email, dob, address, password
