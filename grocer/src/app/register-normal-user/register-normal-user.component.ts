@@ -48,20 +48,17 @@ export class RegisterNormalUserComponent implements OnInit {
     if (registerForm.password != registerForm.repassword) {
       this.registrationMessage = "Error: Passwords do not match";
     }
-    else { // Registration success
+    // Registration success
+    else { 
       let userId = this.genRandomId();
       this.registrationMessage = "";
 
-      // Increment the id
-      let lastUserId = 1;
-
-      // _id, firstname, lastname, email, dob, address, password
+      // _id, firstname, lastname, email, dob, address, password, funds, attemptedLogins, isLocked
       let userAccount = {_id:userId, firstname:registerForm.firstname, lastname:registerForm.lastname, 
         email:registerForm.email, dob:registerForm.dob, phone:registerForm.phone, address:registerForm.address, 
         password:registerForm.password, funds:this.newUserFunds, attemptedLogins:0, isLocked:false};
       
-      //Perform the storing operation here
-      //===================================
+      // Time to call the register function for database usage
       this.userService.registerUser(userAccount)
         .subscribe(
           response=> {
@@ -70,7 +67,7 @@ export class RegisterNormalUserComponent implements OnInit {
           error=> {
             console.log(error);
           });
-      //===================================
+
       // Notify the user of their user id
       this.openDialog(userId);
       this.router.navigateByUrl("/userLogin");
