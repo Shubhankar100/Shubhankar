@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../user.model';
 
+// This url is used in manipulating the data. It needs to 
+// be the same as the one from the respective router.
 const baseUrl = "http://localhost:9090/api/users";
 
 @Injectable({
@@ -22,7 +24,7 @@ export class UserService {
     return this.http.post(baseUrl, data);
   }
 
-  // Gets a user by id
+  // Gets a user by their _id
   getUserFromId(id:number): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`);
   }
