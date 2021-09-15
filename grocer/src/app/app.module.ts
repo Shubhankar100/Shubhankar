@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,14 +17,25 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { environment } from '../environments/environment';
 import { UserLoginComponent } from './user-login/user-login.component';
-
+import { AdminPortalComponent } from "./admin/admin-portal/admin-portal.component";
+import { LoginComponent } from "./login/login.component";
+import { AddProductsComponent } from "./admin/add-products/add-products.component";
+import { DeleteProductsComponent } from "./admin/delete-products/delete-products.component";
+import { HttpClientModule } from '@angular/common/http';
+import {UpdateProductsComponent} from "./admin/update-products/update-products.component"
 @NgModule({
   declarations: [
     AppComponent,
     UserPanelComponent,
     RegisterNormalUserComponent,
     FirstPageComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    AdminPortalComponent,
+    LoginComponent,
+    AddProductsComponent,
+    DeleteProductsComponent,
+    UpdateProductsComponent
+
   ],
   imports: [
     BrowserModule,
@@ -35,9 +46,11 @@ import { UserLoginComponent } from './user-login/user-login.component';
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
+    HttpClientModule,
     MatNativeDateModule,
     MatDatepickerModule,
     MatTabsModule,
+    CommonModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
