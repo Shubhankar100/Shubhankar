@@ -20,7 +20,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
-import { AdminSandboxComponent } from './admin-sandbox/admin-sandbox.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 
 @NgModule({
@@ -29,7 +28,6 @@ import { UserLoginComponent } from './user-login/user-login.component';
     UserPanelComponent,
     RegisterNormalUserComponent,
     FirstPageComponent,
-    AdminSandboxComponent,
     UserLoginComponent
   ],
   imports: [
