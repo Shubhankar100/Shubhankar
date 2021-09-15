@@ -22,31 +22,31 @@
     <h3>
      Name
       <br />
-      <input type="text" name="Pname" [(ngModel)]="Pname" required />
+      <input type="text" name="name" [(ngModel)]="name" required />
     </h3>
     <h3>
       Price
       <br />
-      $ <input type="text" name="Price" [(ngModel)]="Price" required />
+      $ <input type="number" min="0" oninput="validity.valid||(value='')" name="price" [(ngModel)]="price" required />
     </h3>
     <h3>
       Quantity
       <br />
-      <input type="number" name="Quantity" [(ngModel)]="Quantity" required />
+      <input type="number"  min="0" oninput="validity.valid||(value='')" name="quantity" [(ngModel)]="quantity" required />
     </h3>
     
     <h3>
       Description
       <br />
-      <input type="text" name="Discount" [(ngModel)]="Discount" required />
+      <input type="text" name="description" [(ngModel)]="description" required />
     </h3>
     <h3>
       Image Url
       <br />
-     <input type="number" name="PId" [(ngModel)]="PId" required />
+     <input type="text" name="imageUrl" [(ngModel)]="imageUrl" required />
     </h3>
     <input type="reset" value="Clear" />
-    <input type="submit" value="Add Product" />
+    <input type="submit" value="Add Product" [disabled]="!productRef.form.valid" />
     <div>
       {{message}}
     </div>

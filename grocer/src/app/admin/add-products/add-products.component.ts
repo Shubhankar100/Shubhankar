@@ -7,12 +7,12 @@ import { AdminService } from '../admin.service';
   styleUrls: ['./add-products.component.css']
 })
 export class AddProductsComponent implements OnInit {
-Pname:any;
-Price:any;
-Quantity:any;
-Discount:any;
-PId:any;
-message:any;
+  name:any;
+  price:any;
+  quantity:any;
+  description:any;
+  message:any;
+  imageUrl:any;
 
   constructor(public adminService: AdminService) { }
 
@@ -22,11 +22,11 @@ message:any;
     console.log(productRef);
     this.adminService.storeProductDetailsInfo(productRef).subscribe(result => this.message = result,error => this.message = error);
     
-    this.Pname = "";
-    this.Price = "";
-    this.Quantity = "";
-    this.Discount="";
-    this.PId="";
+    this.name = "";
+    this.price = "";
+    this.quantity = "";
+    this.description="";
+    this.imageUrl="";
   }
 
 }
