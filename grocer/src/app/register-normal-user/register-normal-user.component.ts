@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 
 export interface DialogData {
   uid:number;
@@ -54,11 +54,19 @@ export class RegisterNormalUserComponent implements OnInit {
       // Notify the user of their user id
       this.openDialog(userId);
 
+      // Increment the id
+      let lastUserId = 1;
+
       // _id, firstname, lastname, email, dob, address, password
       let userAccount = {_id:userId, firstname:registerForm.firstname, lastname:registerForm.lastname, 
         email:registerForm.email, dob:registerForm.dob, phone:registerForm.phone, address:registerForm.address, 
-        password:registerForm.password, funds:this.newUserFunds};
+        password:registerForm.password, funds:this.newUserFunds, attemptedLogins:0, isLocked:false};
       
+      //Perform the storing operation here
+      //===================================
+
+      //===================================
+
       this.router.navigateByUrl("/userLogin");
     }
   }

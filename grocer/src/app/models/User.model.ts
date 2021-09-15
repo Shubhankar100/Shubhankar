@@ -1,15 +1,14 @@
-import { Address } from "./address.model";
 
 export interface User{
-  _id : string,
-  userName: string,
-  email: string,
-  password: string,
-  firstName: string,
-  lastName: string,
-  paymentMethods: number;
-  numAttempts: number,
-  date: Date,
-  phoneNumber: number,
-  addresses: Array<Address>
+  _id:Number; // Auto-generated user ID, this will be the username
+  firstname:String;
+  lastname:String;
+  email:String;
+  dob:String;
+  phone:String;
+  address:String;
+  password:String;
+  funds:Number;
+  attemptedLogins:Number;
+  isLocked:Boolean;
 }

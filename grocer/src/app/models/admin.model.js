@@ -12,4 +12,4 @@ const AdminSchema = mongoose.Schema({
 });
 
 let AdminModel = mongoose.model("", AdminSchema, "admins");
-module.exports = AdminModel
+module.exports = AdminModel;
