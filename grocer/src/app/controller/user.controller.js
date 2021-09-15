@@ -44,3 +44,22 @@ exports.findOne = (request, response)=> {
     });
 };
 
+// Update a user's details based on their id
+exports.updateOne = (request, response)=> {
+    const id = request.params.id;
+
+    User.findByIdAndUpdate(id, request.body, { useFindAndModify: false })
+        .then(data=> {
+            if (!data) {
+                request.status(404).send({
+                    message:`Cannot update user with id=${id}. It probably doesn't exist.`
+                });
+            } else response.send({message:"User updated successfully."});
+        })
+        .catch(err=> {
+            response.status(500).send({
+                message: "Error updating tutorial with id="+id
+            });
+        });
+};
+
