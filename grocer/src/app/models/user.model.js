@@ -22,6 +22,7 @@ module.exports = mongoose => {
     return object;
   });
 
+  // user_accounts is the name of the database to perform operations on
   const User = mongoose.model("user_accounts", schema);
   return User;
 }
