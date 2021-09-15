@@ -25,7 +25,6 @@ import { AdminPortalComponent } from "./admin/admin-portal/admin-portal.componen
 import { LoginComponent } from "./login/login.component";
 import { AddProductsComponent } from "./admin/add-products/add-products.component";
 import { DeleteProductsComponent } from "./admin/delete-products/delete-products.component";
-import { HttpClientModule } from '@angular/common/http';
 import {UpdateProductsComponent} from "./admin/update-products/update-products.component"
 @NgModule({
   declarations: [
@@ -53,6 +52,9 @@ import {UpdateProductsComponent} from "./admin/update-products/update-products.c
     HttpClientModule,
     MatNativeDateModule,
     MatDatepickerModule,
+    MatSelectModule,
+    MatIconModule,
+    MatDialogModule,
     MatTabsModule,
     CommonModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
