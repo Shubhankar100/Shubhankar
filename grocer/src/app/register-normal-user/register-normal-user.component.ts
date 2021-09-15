@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 
 export interface DialogData {
@@ -51,8 +51,6 @@ export class RegisterNormalUserComponent implements OnInit {
     else { // Registration success
       let userId = this.genRandomId();
       this.registrationMessage = "";
-      // Notify the user of their user id
-      this.openDialog(userId);
 
       // Increment the id
       let lastUserId = 1;
@@ -64,9 +62,17 @@ export class RegisterNormalUserComponent implements OnInit {
       
       //Perform the storing operation here
       //===================================
-
+      this.userService.registerUser(userAccount)
+        .subscribe(
+          response=> {
+            console.log(response);
+          },
+          error=> {
+            console.log(error);
+          });
       //===================================
-
+      // Notify the user of their user id
+      this.openDialog(userId);
       this.router.navigateByUrl("/userLogin");
     }
   }

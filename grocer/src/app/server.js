@@ -29,6 +29,8 @@ app.get("/", (request,response)=> {
     response.json({message:"Simple web app"});
 });
 
+require("./router/user.router")(app);
+
 app.listen(9090, ()=> {
     console.log("Server is running on port 9090");
 });
