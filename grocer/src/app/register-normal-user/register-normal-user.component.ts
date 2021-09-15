@@ -1,6 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
+
+export interface DialogData {
+  uid:number;
+}
 
 @Component({
   selector: 'app-register-normal-user',
@@ -13,14 +19,24 @@ export class RegisterNormalUserComponent implements OnInit {
   // Default amount of funds for new users
   newUserFunds:number = 100;
 
-  constructor(public router:Router) { }
+  constructor(public router:Router, public dialog:MatDialog, private userService:UserService) { }
 
   ngOnInit(): void {
+    
   }
 
   // Gets a random number from 100,000 to 999,999
   genRandomId(): number {
     return Math.round(Math.random() * (999999 - 100000) + 100000);
+  }
+
+  // Opens a dialog box notifying the user of their ID
+  openDialog(userid:number): void {
+    this.dialog.open(DialogRegisterDialog, {
+      data: {
+        uid:userid
+      }
+    });
   }
 
   // Called when the user hits the submit button
@@ -35,13 +51,24 @@ export class RegisterNormalUserComponent implements OnInit {
       let userId = this.genRandomId();
       this.registrationMessage = "";
       // TODO: there is a small chance of duplicate ids, find a way to prevent it?
-      alert("Registration successful! Your user ID is: " + userId);
+      //alert("Registration successful! Your user ID is: " + userId);
+      this.openDialog(userId);
 
       // _id, firstname, lastname, email, dob, address, password
-      let userAccount = {_id:userId, firstname:registerForm.firstname, lastname:registerForm.lastname, email:registerForm.email, dob:registerForm.dob, phone:registerForm.phone, address:registerForm.address, password:registerForm.password, funds:this.newUserFunds};
+      let userAccount = {_id:userId, firstname:registerForm.firstname, lastname:registerForm.lastname, 
+        email:registerForm.email, dob:registerForm.dob, phone:registerForm.phone, address:registerForm.address, 
+        password:registerForm.password, funds:this.newUserFunds};
       
       this.router.navigateByUrl("/userLogin");
     }
   }
 
+}
+
+@Component({
+  selector: 'dialog-register',
+  templateUrl: 'dialog-register.html'
+})
+export class DialogRegisterDialog {
+  constructor(@Inject(MAT_DIALOG_DATA) public data:DialogData) { }
 }
