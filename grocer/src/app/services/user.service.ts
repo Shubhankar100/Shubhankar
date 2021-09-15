@@ -21,4 +21,9 @@ export class UserService {
   registerUser(data:any): Observable<any> {
     return this.http.post(baseUrl, data);
   }
+
+  // Gets a user by id
+  getUserFromId(id:number): Observable<any> {
+    return this.http.get(`${baseUrl}/${id}`);
+  }
 }

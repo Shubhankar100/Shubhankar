@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-login',
@@ -9,17 +10,20 @@ import { Router } from '@angular/router';
 })
 export class UserLoginComponent implements OnInit {
 
-  constructor(public router:Router) { }
+  constructor(private userService:UserService, private router:Router, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    
   }
 
-  checkUser(loginRef:NgForm) {
+  checkUser(loginRef:NgForm): void {
     let loginForm = loginRef.value;
+    
 
-    if (loginForm.username == "default" && loginForm.password == "123") {
-      this.router.navigateByUrl("/userPanel");
-    }
+    // if (loginForm.username == "default" && loginForm.password == "123") {
+    //   this.router.navigateByUrl("/userPanel");
+    // }
+
   }
 
 }

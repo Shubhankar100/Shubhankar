@@ -17,8 +17,8 @@ exports.register = (request, response)=> {
         isLocked: request.body.isLocked
     });
 
-    user
-    .save(user)
+    // This portion saves the user object to the database
+    user.save(user)
     .then(data => {
         response.send(data);
     })
@@ -30,8 +30,17 @@ exports.register = (request, response)=> {
     });
 };
 
-// Retrieve all users
-exports.getAll = (request, response)=> {
-    
+// Retrieve a user based on an id
+exports.findOne = (request, response)=> {
+    const id = request.params.id;
+
+    User.findById(id).then(data=> {
+        if (!data) 
+            response.status(404).send({message:"No ID was found with ID " + id});
+        else response.send(data);
+    })
+    .catch(err=> {
+        response.status(500).send({message:"Error: Could not retrieve user with ID " + id});
+    });
 };
 
