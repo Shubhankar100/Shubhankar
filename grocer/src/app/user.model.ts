@@ -1,11 +1,14 @@
 
-export class User {
-    constructor(public userId:number,
-        public fname:string,
-        public lname:string,
-        public emailId:string,
-        public pass:string,
-        public dateofbirth:string,
-        public phone_no:string,
-        public address:string) { }
+export interface User{
+  _id:Number; // Auto-generated user ID, this will be the username
+  firstname:String;
+  lastname:String;
+  email:String;
+  dob:String;
+  phone:String;
+  address:String;
+  password:String;
+  funds:Number;
+  attemptedLogins:Number;
+  isLocked:Boolean;
 }
