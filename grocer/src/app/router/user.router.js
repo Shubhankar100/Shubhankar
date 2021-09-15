@@ -4,16 +4,19 @@ module.exports = app => {
 
     var router = require("express").Router();
 
-    // IMPORTANT: the router.post, router.get, etc. matter!
+    // IMPORTANT: the router.post, router.get, etc. matter! You can 
+    // also have multiple router actions (ex. having 2 router.post).
+    //
     // Here is a guide on what to use:
     // --------------------------------
-    // router.post: Adding to the database
-    // router.get:  Retrieving data
-    // router.put:  Updating data
+    // router.post:   Adding to the database
+    // router.get:    Retrieving data
+    // router.put:    Updating data
     // router.delete: Deleting data
     // --------------------------------
 
     // Create a new user
+    // The first parameter is a url used in the node server
     // The second parameter is the function to use from the controller
     router.post("/", users.register);
 
