@@ -57,12 +57,14 @@ exports.findByTime = (request, response)=> {
                 });
             });
             break;
-        case 'weekly':
+        case 'weekly': 
             // Sort by weekly
             const curWeekDay = currentDate.getDay();
+            const otherDate = new Date(curYear+"-"+curMonth+"-"+curDay);
 
-            Report.find({day:curDay, weekDay:{$lte:curWeekDay}, month:curMonth, year:curYear})
-            .then(data=> {
+            Report.find(
+                {$week:otherDate}
+            ).then(data=> {
                 response.send(data);
             })
             .catch(err=> {
