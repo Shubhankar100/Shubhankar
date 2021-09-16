@@ -48,7 +48,7 @@
             <form class="form-dimensions" #reportRef="ngForm" (ngSubmit)="generateReports(reportRef)">
                 <mat-form-field>
                     <mat-label>Time</mat-label>
-                    <select matNativeControl ngModel required>
+                    <select matNativeControl name="reporttype" ngModel required>
                         <option value="daily">Daily</option>
                         <option value="weekly">Weekly</option>
                         <option value="monthly">Monthly</option>
