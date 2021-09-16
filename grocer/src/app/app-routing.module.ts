@@ -10,6 +10,7 @@ import { AdminSandboxComponent } from './admin-sandbox/admin-sandbox.component';
 const routes: Routes = [
   {path:"userLogin",component:UserLoginComponent},
   {path:"userPanel",component:UserPanelComponent},
+  {path:"userPanel/:id",component:UserPanelComponent},
   {path:"registerUser",component:RegisterNormalUserComponent},
   {path:"employeePanel",component:EmployeePanelComponent},
   {path:"adminSandbox",component:AdminSandboxComponent},

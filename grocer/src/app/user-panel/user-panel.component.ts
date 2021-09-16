@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { UserService } from '../services/user.service';
+
 
 @Component({
   selector: 'app-user-panel',
@@ -9,12 +11,16 @@ import { Router } from '@angular/router';
 })
 export class UserPanelComponent implements OnInit {
 
+  constructor(public router:Router, private userService:UserService, private route:ActivatedRoute) { }
+
   //Strings used for the html page
   orderTable:string="";
   editResponse:string="";
   currentFunds:string="$"
+  fundsErrorMessage:string="";
 
-  money:number = 5; //CHANGE THIS LATER WHEN WE CAN GET THE ACTUAL VALUE
+  userId:number=this.route.snapshot.params["id"];
+
 
   //Function used to get all the user's orders
   orderStatus(): void {
@@ -42,18 +48,25 @@ export class UserPanelComponent implements OnInit {
     this.orderTable=tableContents+tableEnd;
   }
 
-  updateCurrentFunds(): void{
+  getStartingFunds(): void{
+    let curUser:any = null;
     //get the funds currently on the profile.
+    this.userService.getUserFromId(this.userId).subscribe(data=>{
+      //we have found the user.
+      curUser = data;
+      this.currentFunds="$"+curUser.funds.toString()
+    },
+    error=> {
+      console.log(error);
+    })
 
     //By default, let's assume it's five bucks
-    this.currentFunds="$"+this.money.toString();
   }
 
-  constructor(public router:Router) { }
 
   ngOnInit(): void {
     this.orderStatus();
-    this.updateCurrentFunds();
+    this.getStartingFunds();
   }
 
   //Helper function to check if edit profile stuff is empty or not
@@ -88,9 +101,23 @@ export class UserPanelComponent implements OnInit {
 
   //Allows the user to add funds.
   updateFunds(additionalFundsForm:NgForm):void {
+    let curUser:any = null;
     let additionalFunds = additionalFundsForm.value.funds;
-    this.money += +additionalFunds;
-    this.updateCurrentFunds();
+    this.userService.getUserFromId(this.userId).subscribe(data=>{
+      //we have found the user.
+      curUser = data;
+      curUser.funds+=additionalFunds;
+      //update their funds
+      this.userService.updateUser(this.userId,curUser).subscribe(response=> {
+        this.currentFunds="$"+curUser.funds.toString();
+        this.fundsErrorMessage="";
+      })
+    },
+    error=> {
+      //If there is an error
+      console.log(error);
+      this.fundsErrorMessage="Funds failed to be updated."
+    })
   }
 
 }
