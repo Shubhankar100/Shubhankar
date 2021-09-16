@@ -36,7 +36,7 @@
                     <input matInput type="email" name="email" ngModel>
                 </mat-form-field><br/>
                 <button type="submit" mat-raised-button color="primary">Update</button>
-                <br/><p>{{editResponse}}</p>
+                <br/><br/><p style="color: red;">{{editResponse}}</p>
             </form>
         </mat-tab>
         <mat-tab label="Add Funds">
@@ -55,7 +55,7 @@
                 </mat-form-field>
                 <br>
                 <button type="submit" mat-raised-button color="primary" [disabled]="additionalFundsForm.invalid">Login</button>
-                {{fundsErrorMessage}}
+                <br/><br/><p style="color: red;">{{fundsErrorMessage}}</p>
             </form>
         </mat-tab>
     </mat-tab-group>

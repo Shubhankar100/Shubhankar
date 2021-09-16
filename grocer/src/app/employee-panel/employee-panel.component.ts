@@ -46,6 +46,19 @@ export class EmployeePanelComponent implements OnInit {
         });
   }
 
+  resetFakeEmployee(): void{
+    let fakeEmployee = {_id:8675309,firstname:"Jane",lastname:"Doe",email:"fakeEmail@yahoo.com",password:"123",hasDefaultPass:true};
+    this.EmployeeService.updateEmployee(8675309,fakeEmployee)
+      .subscribe(
+        response=> {
+          console.log(response);
+          console.log("Fake Employee reset");
+        },
+        error=> {
+          console.log(error);
+        }
+      )
+  }
 
 
     //Check the employee upon logging in

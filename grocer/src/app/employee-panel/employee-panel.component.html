@@ -23,14 +23,15 @@
     <!-- Delete the section immediately below for final release  -->
     <span style="color: blue;">Developer Cheat (Remove later): Username: [8675309] Password: [123] (No brackets)</span><br/>
     <button type="button" mat-raised-button color="primary" (click)="developerCreateEmployee()">Create Fake Employee</button>
-    
+    <button type="button" mat-raised-button color="primary" (click)="resetFakeEmployee()">Reset Fake Employee</button>
     </form>
 
 </div>
 
 
 <div *ngIf="firstLoginFlag">
-    <form #updatePassRef="ngForm" (ngSubmit)="updateFirstPassword(updatePassRef)">
+    <h1>Grocery HUB</h1>
+    <form class="form-dimensions" #updatePassRef="ngForm" (ngSubmit)="updateFirstPassword(updatePassRef)">
         <h1>Please Update Password (First Time Login)</h1>
         <mat-form-field>
             <mat-label>New Password</mat-label>
@@ -40,9 +41,12 @@
             <mat-label>Confirm New Password</mat-label>
             <input matInput type="password" name="repassword" ngModel required>
         </mat-form-field><br>
-        <button type="submit" mat-raised-button color="primary" [disabled]="updatePassRef.invalid">Update Password</button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="updatePassRef.invalid">Update Password</button><br><br>
+        <button mat-fab color="warn" aria-label="Main Screen" routerLink="">
+            <mat-icon>home</mat-icon>
+        </button><br/><br/>
+        <span style="color: red;">{{changePasswordMessage}}</span><br/>
     </form>
-    <br/><span style="color: red;">{{changePasswordMessage}}</span>
 </div>
 
 
