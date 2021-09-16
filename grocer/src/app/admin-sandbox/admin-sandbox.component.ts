@@ -39,9 +39,21 @@ export class AdminSandboxComponent implements OnInit {
       });
   }
 
+  // Called when the admin hits the delete employee button
   deleteEmployee(delEmployeeRef:NgForm): void {
     let employeeForm = delEmployeeRef.value;
 
+    // Attempt to delete the employee account
+    this.employeeService.deleteEmployee(employeeForm.empid)
+      .subscribe(
+        response=> { // Succeed
+          console.log(response);
+          alert("Employee deleted successfully!");
+        },
+        error=> { // Fail
+          console.log(error);
+          alert("Error: This employee does not exist.");
+        });
   }
 
   generateReports(reportRef:NgForm): void {
