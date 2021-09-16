@@ -1,3 +1,5 @@
+const { response } = require("express");
+const { request } = require("http");
 const db = require("../models");
 // This is how we access the user database
 const Employee = db.employees;
@@ -70,3 +72,21 @@ exports.deleteOne = (request, response)=> {
     });
 };
 
+//Update an employee based on id
+exports.updateOne = (request,response)=> {
+    const id = request.params.id;
+
+    Employee.findByIdAndUpdate(id, request.body, { useFindAndModify: false})
+        .then(data=> {
+            if(!data) {
+                request.status(404).send({
+                    message:`Cannot update employee with id=${id}. It probably doesn't exist.`
+                });
+            } else response.send({message:"Employee updated successfully."});
+        })
+        .catch(err=> {
+            response.status(500).send({
+                message: "Error updating tutorial with id="+id
+            });
+        });
+};
