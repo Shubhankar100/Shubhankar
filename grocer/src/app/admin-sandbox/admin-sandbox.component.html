@@ -70,22 +70,25 @@
             <br>
             <hr>
             <!--Generation results go here-->
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                        <th>User ID</th>
-                        <th>Product Name</th>
-                        <th>Date of Purchase</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let report of reportArray">
-                        <td>{{report.userid}}</td>
-                        <td>{{report.product}}</td>
-                        <td>{{report.month+1}}-{{report.day}}-{{report.year}}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Product Name</th>
+                            <th>Date of Purchase</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let report of reportArray">
+                            <td>{{report.userid}}</td>
+                            <td>{{report.product}}</td>
+                            <td>{{report.month+1}}-{{report.day}}-{{report.year}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
         </mat-tab>
     </mat-tab-group>
 </div>
