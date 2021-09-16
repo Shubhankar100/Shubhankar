@@ -18,6 +18,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { UserLoginComponent } from './user-login/user-login.component';
@@ -60,6 +61,7 @@ import { EmployeePanelComponent } from './employee-panel/employee-panel.componen
     MatIconModule,
     MatDialogModule,
     MatTabsModule,
+    MatCardModule,
     CommonModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
