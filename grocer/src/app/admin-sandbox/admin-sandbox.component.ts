@@ -9,6 +9,8 @@ import { ReportService } from '../services/reports.service';
   styleUrls: ['./admin-sandbox.component.css']
 })
 export class AdminSandboxComponent implements OnInit {
+  // List of generated reports
+  reportArray:Array<any> = [];
 
   constructor(private employeeService:EmployeeService,
               private reportService:ReportService) { }
@@ -58,21 +60,28 @@ export class AdminSandboxComponent implements OnInit {
         });
   }
 
+  // Grabs a list of reports based on a defined list
   generateReports(reportRef:NgForm): void {
     let reportForm = reportRef.value;
 
-    let generatedReports = [];
-
     this.reportService.getReportsByTime(reportForm.reporttype)
       .subscribe(data=> {
-        generatedReports = data;
         console.log(data);
-        alert("Found a total of " + generatedReports.length);
+        // Clear the array of previous results
+        this.reportArray = [];
+        // Store the retrieved items from the database
+        data.forEach(element=> {
+          this.reportArray.push(element);
+        });
+
+        alert("Found a total of " + this.reportArray.length + " reports.");
       },
       error=> {
         console.log(error);
         alert("Found no reports.");
+        return;
       });
+    
   }
 
 }

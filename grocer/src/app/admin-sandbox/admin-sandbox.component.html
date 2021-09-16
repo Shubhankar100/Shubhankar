@@ -69,6 +69,19 @@
             </form>
             <br>
             <hr>
+            <!--Generation results go here-->
+            <table class="styled-table">
+                <tr>
+                    <th>Product Name</th>
+                    <th>User ID</th>
+                    <th>Date of Purchase</th>
+                </tr>
+                <tr *ngFor="let report of reportArray">
+                    <td>{{report.product}}</td>
+                    <td>{{report.userId}}</td>
+                    <td>{{report.month}}-{{report.day}}-{{report.year}}</td>
+                </tr>
+            </table>
         </mat-tab>
     </mat-tab-group>
 </div>
