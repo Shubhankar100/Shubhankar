@@ -16,12 +16,16 @@
         <br><br>
         <button mat-fab color="warn" aria-label="Main Screen" routerLink="">
             <mat-icon>home</mat-icon>
-        </button>
+        </button><br/><br/>
+        <span style="color: red;">{{loginMessage}}</span>
         <br/>
-    <span style="color: blue;">Developer Cheat (Remove later): Username: [8675309] Password: [123] (No brackets)</span>
-    </form>
+
+    <!-- Delete the section immediately below for final release  -->
+    <span style="color: blue;">Developer Cheat (Remove later): Username: [8675309] Password: [123] (No brackets)</span><br/>
+    <button type="button" mat-raised-button color="primary" (click)="developerCreateEmployee()">Create Fake Employee</button>
     
-    <br>
+    </form>
+
 </div>
 
 
