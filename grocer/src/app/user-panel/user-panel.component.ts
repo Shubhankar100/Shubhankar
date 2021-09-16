@@ -9,16 +9,14 @@ import { Router } from '@angular/router';
 })
 export class UserPanelComponent implements OnInit {
 
-  orderFlag:boolean=false;
-  profileFlag:boolean=false;
-  fundsFlag:boolean=false;
-
+  //Strings used for the html page
   orderTable:string="";
   editResponse:string="";
-
   currentFunds:string="$"
+
   money:number = 5; //CHANGE THIS LATER WHEN WE CAN GET THE ACTUAL VALUE
 
+  //Function used to get all the user's orders
   orderStatus(): void {
     let tableHead = "<table><tr><th>Order ID</th><th>Order Status</th></tr>";
     let tableRowStart = "<tr><td>";
@@ -58,7 +56,7 @@ export class UserPanelComponent implements OnInit {
     this.updateCurrentFunds();
   }
 
-
+  //Helper function to check if edit profile stuff is empty or not
   checkIfEmpty(newProfileStuff:any): boolean {
     if(newProfileStuff.password=="" && newProfileStuff.address=="" && newProfileStuff.email=="" && newProfileStuff.phone==""){
       return true;
@@ -69,6 +67,7 @@ export class UserPanelComponent implements OnInit {
     else return false;
   }
 
+  //function used to edit the profile of the user
   editProfile(editUserRef:NgForm): void {
     let newProfileValue = editUserRef.value;
     editUserRef.resetForm();
@@ -81,12 +80,13 @@ export class UserPanelComponent implements OnInit {
       this.editResponse="No fields filled!"
     }
     else{
-      //Do stuff with info.
+      //Do stuff with info. It will parse what things are there or not.
 
       this.editResponse="Profile updated!"
     }
   }
 
+  //Allows the user to add funds.
   updateFunds(additionalFundsForm:NgForm):void {
     let additionalFunds = additionalFundsForm.value.funds;
     this.money += +additionalFunds;

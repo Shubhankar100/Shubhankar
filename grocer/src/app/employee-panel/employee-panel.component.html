@@ -1,0 +1,61 @@
+<div *ngIf="signInFlag">
+    <h1>Employee Login</h1>
+    <a routerLink="">Go Back</a>
+    <form #loginRef="ngForm" (ngSubmit)="checkEmployee(loginRef)">
+        <mat-form-field>
+            <mat-label>Employee ID</mat-label>
+            <input matInput name="username" ngModel required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" name="password" ngModel required>
+        </mat-form-field>
+        <br>
+        <button type="submit" mat-raised-button color="primary" [disabled]="loginRef.invalid">Login</button>
+    </form>
+    <br>
+    <span style="color: red;">{{loginMessage}}</span>
+    <br/>
+    <span style="color: blue;">Developer Cheat (Remove later): Username: [8675309] Password: [123] (No brackets)</span>
+
+</div>
+
+<div *ngIf="firstLoginFlag">
+    <form #updatePassRef="ngForm" (ngSubmit)="updateFirstPassword(updatePassRef)">
+        <h1>Please Update Password (First Time Login)</h1>
+        <mat-form-field>
+            <mat-label>New Password</mat-label>
+            <input matInput type="password" name="password" ngModel required>
+        </mat-form-field><br/>
+        <mat-form-field>
+            <mat-label>Confirm New Password</mat-label>
+            <input matInput type="password" name="repassword" ngModel required>
+        </mat-form-field><br>
+        <button type="submit" mat-raised-button color="primary" [disabled]="updatePassRef.invalid">Update Password</button>
+    </form>
+    <br/><span style="color: red;">{{changePasswordMessage}}</span>
+</div>
+
+
+<div *ngIf="mainPageFlag">
+    <h1>Employee Panel</h1>
+    <button mat-raised-button color="primary" style="margin-bottom: 10px;" (click)="employeeLogout()">Logout</button>
+    <mat-tab-group style="text-align: center;">
+        <mat-tab label="Send Request">
+            <!--"Select items" function-->
+        </mat-tab>
+        <mat-tab label="Update Order Status">
+            <!--Order functions-->
+            
+        </mat-tab>
+        <mat-tab label="Unlock Users">
+            <!--Edit profile functions-->
+            
+        </mat-tab>
+        <mat-tab label="Edit Profile">
+            <!--Funding functions-->
+            
+        </mat-tab>
+    </mat-tab-group>
+</div>

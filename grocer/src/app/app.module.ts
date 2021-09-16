@@ -26,6 +26,8 @@ import { LoginComponent } from "./login/login.component";
 import { AddProductsComponent } from "./admin/add-products/add-products.component";
 import { DeleteProductsComponent } from "./admin/delete-products/delete-products.component";
 import {UpdateProductsComponent} from "./admin/update-products/update-products.component"
+import { EmployeePanelComponent } from './employee-panel/employee-panel.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,8 +39,9 @@ import {UpdateProductsComponent} from "./admin/update-products/update-products.c
     LoginComponent,
     AddProductsComponent,
     DeleteProductsComponent,
-    UpdateProductsComponent
+    UpdateProductsComponent,
 
+    EmployeePanelComponent
   ],
   imports: [
     BrowserModule,
