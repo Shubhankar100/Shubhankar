@@ -24,13 +24,13 @@ module.exports = app => {
     router.get("/:time", reports.findByTime);
 
     // Retrieve a list of reports by user
-    router.get("/:time/:user", reports.findByUser);
+    router.get("/:time/:userid", reports.findByUser);
 
     // Retrieve a list of reports by product
     router.get("/:time/:product", reports.findByProduct);
 
     // Retrieve a list of reports by all
-    router.get("/:time/:user/:product", reports.findByAll);
+    router.get("/:time/:userid/:product", reports.findByAll);
 
     // Since this is the router for users, we use /api/users
     app.use("/api/reports", router);

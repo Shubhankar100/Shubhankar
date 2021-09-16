@@ -11,6 +11,6 @@ db.url = dbConfig.url;
 // Add each database model below in similar fashion
 db.users = require("./user.model.js")(mongoose);
 db.employees = require("./employee.model.js")(mongoose);
-db.reports = require("./report.model")(mongoose);
+db.reports = require("./report.model.js")(mongoose);
 
 module.exports = db;

@@ -57,12 +57,11 @@ exports.findByTime = (request, response)=> {
                 });
             });
             break;
-        case 'weekly':
+        case 'weekly': 
             // Sort by weekly
             const curWeekDay = currentDate.getDay();
 
-            Report.find({day:curDay, weekDay:{$lte:curWeekDay}, month:curMonth, year:curYear})
-            .then(data=> {
+            Report.find({day:{$gte:curDay-6}, month:curMonth, year:curYear}).then(data=> {
                 response.send(data);
             })
             .catch(err=> {
@@ -92,14 +91,164 @@ exports.findByTime = (request, response)=> {
 };
 
 exports.findByUser = (request,response)=> {
+    const timeType = request.params.time;
+    const username = request.params.userid;
+    const currentDate = new Date();
+    const curDay = currentDate.getDate();
+    const curMonth = currentDate.getMonth(); 
+    const curYear = currentDate.getFullYear();
 
+    switch (timeType) {
+        case 'daily':
+            // Sort by daily
+            Report.find({userid:username, day:curDay, month:curMonth, year:curYear})
+            .then(data=> {
+                response.send(data);
+            })
+            .catch(err=> {
+                response.status(500).send({
+                    message: err.message || "An error occurred retrieving reports."
+                });
+            });
+            break;
+        case 'weekly': 
+            // Sort by weekly
+            const curWeekDay = currentDate.getDay();
+
+            Report.find({userid:username, day:{$gte:curDay-6}, month:curMonth, year:curYear}).then(data=> {
+                response.send(data);
+            })
+            .catch(err=> {
+                response.status(500).send({
+                    message: err.message || "An error occurred retrieving reports."
+                });
+            });
+            break;
+        case 'monthly':
+            // Sort by monthly
+            Report.find({userid:username, month:curMonth, year:curYear})
+            .then(data=> {
+                response.send(data);
+            })
+            .catch(err=> {
+                response.status(500).send({
+                    message: err.message || "An error occurred retrieving reports."
+                });
+            });
+            break;
+        default:
+            response.status(500).send({
+                message: "Something went wrong when finding the reports by time!"
+            });
+            break;
+    }
 };
 
 exports.findByProduct = (request,response)=> {
+    const timeType = request.params.time;
+    const currentDate = new Date();
+    const curDay = currentDate.getDate();
+    const curMonth = currentDate.getMonth(); 
+    const curYear = currentDate.getFullYear();
 
+    switch (timeType) {
+        case 'daily':
+            // Sort by daily
+            Report.find({product:pname, day:curDay, month:curMonth, year:curYear})
+            .then(data=> {
+                response.send(data);
+            })
+            .catch(err=> {
+                response.status(500).send({
+                    message: err.message || "An error occurred retrieving reports."
+                });
+            });
+            break;
+        case 'weekly': 
+            // Sort by weekly
+            const curWeekDay = currentDate.getDay();
+
+            Report.find({product:pname, day:{$gte:curDay-6}, month:curMonth, year:curYear}).then(data=> {
+                response.send(data);
+            })
+            .catch(err=> {
+                response.status(500).send({
+                    message: err.message || "An error occurred retrieving reports."
+                });
+            });
+            break;
+        case 'monthly':
+            // Sort by monthly
+            Report.find({product:pname, month:curMonth, year:curYear})
+            .then(data=> {
+                response.send(data);
+            })
+            .catch(err=> {
+                response.status(500).send({
+                    message: err.message || "An error occurred retrieving reports."
+                });
+            });
+            break;
+        default:
+            response.status(500).send({
+                message: "Something went wrong when finding the reports by time!"
+            });
+            break;
+    }
 };
 
 exports.findByAll = (request,response)=> {
+    const timeType = request.params.time;
+    const pname = request.params.product;
+    const username = +request.params.userid;
+    const currentDate = new Date();
+    const curDay = currentDate.getDate();
+    const curMonth = currentDate.getMonth(); 
+    const curYear = currentDate.getFullYear();
 
+    switch (timeType) {
+        case 'daily':
+            // Sort by daily
+            Report.find({userid:username, product:pname, day:curDay, month:curMonth, year:curYear})
+            .then(data=> {
+                response.send(data);
+            })
+            .catch(err=> {
+                response.status(500).send({
+                    message: err.message || "An error occurred retrieving reports."
+                });
+            });
+            break;
+        case 'weekly': 
+            // Sort by weekly
+            const curWeekDay = currentDate.getDay();
+
+            Report.find({userid:username, product:pname, day:{$gte:curDay-6}, month:curMonth, year:curYear}).then(data=> {
+                response.send(data);
+            })
+            .catch(err=> {
+                response.status(500).send({
+                    message: err.message || "An error occurred retrieving reports."
+                });
+            });
+            break;
+        case 'monthly':
+            // Sort by monthly
+            Report.find({userid:username, product:pname, month:curMonth, year:curYear})
+            .then(data=> {
+                response.send(data);
+            })
+            .catch(err=> {
+                response.status(500).send({
+                    message: err.message || "An error occurred retrieving reports."
+                });
+            });
+            break;
+        default:
+            response.status(500).send({
+                message: "Something went wrong when finding the reports by time!"
+            });
+            break;
+    }
 };
 
