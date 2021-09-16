@@ -50,12 +50,14 @@ export class RegisterNormalUserComponent implements OnInit {
     }
     // Registration success
     else { 
+      // Generate a new user id
       let userId = this.genRandomId();
+      let formattedDob = registerForm.dob.substring(0, 10); // Get rid of the time
       this.registrationMessage = "";
 
       // _id, firstname, lastname, email, dob, address, password, funds, attemptedLogins, isLocked
       let userAccount = {_id:userId, firstname:registerForm.firstname, lastname:registerForm.lastname, 
-        email:registerForm.email, dob:registerForm.dob, phone:registerForm.phone, address:registerForm.address, 
+        email:registerForm.email, dob:formattedDob, phone:registerForm.phone, address:registerForm.address, 
         password:registerForm.password, funds:this.newUserFunds, attemptedLogins:0, isLocked:false};
       
       // Time to call the register function for database usage
