@@ -57,12 +57,12 @@
                 &nbsp;
                 <mat-form-field>
                     <mat-label>User ID</mat-label>
-                    <input matInput name="userId">
+                    <input matInput name="userId" ngModel>
                 </mat-form-field>
                 &nbsp;
                 <mat-form-field>
                     <mat-label>Product Name</mat-label>
-                    <input matInput name="productId">
+                    <input matInput name="productId" ngModel>
                 </mat-form-field>
                 <br>
                 <button type="submit" mat-raised-button color="primary" [disabled]="reportRef.invalid">Generate</button>

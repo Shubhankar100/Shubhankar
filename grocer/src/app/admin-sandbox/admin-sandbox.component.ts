@@ -64,7 +64,10 @@ export class AdminSandboxComponent implements OnInit {
   generateReports(reportRef:NgForm): void {
     let reportForm = reportRef.value;
 
-    this.reportService.getReportsByTime(reportForm.reporttype)
+    // Sort by time only
+    if (reportForm.userId === "" && reportForm.productId === "") {
+      console.log("Entered here");
+      this.reportService.getReportsByTime(reportForm.reporttype)
       .subscribe(data=> {
         console.log(data);
         // Clear the array of previous results
@@ -81,6 +84,78 @@ export class AdminSandboxComponent implements OnInit {
         alert("Found no reports.");
         return;
       });
+    }
+
+
+    // Sort by user
+    else if (reportForm.userId !== "" && reportForm.productId === "") {
+      console.log("Searching by user");
+      this.reportService.getReportsByUser(reportForm.reporttype, reportForm.userId)
+      .subscribe(data=> {
+        console.log(data);
+        // Clear the array of previous results
+        this.reportArray = [];
+        // Store the retrieved items from the database
+        data.forEach(element=> {
+          this.reportArray.push(element);
+        });
+
+        alert("Found a total of " + this.reportArray.length + " reports.");
+      },
+      error=> {
+        console.log(error);
+        alert("Found no reports.");
+        return;
+      });
+    }
+
+
+
+    // Sort by product
+    else if (reportForm.userId === "" && reportForm.productId !== "") {
+      this.reportService.getReportsByProduct(reportForm.reporttype, reportForm.productId)
+      .subscribe(data=> {
+        console.log(data);
+        // Clear the array of previous results
+        this.reportArray = [];
+        // Store the retrieved items from the database
+        data.forEach(element=> {
+          this.reportArray.push(element);
+        });
+
+        alert("Found a total of " + this.reportArray.length + " reports.");
+      },
+      error=> {
+        console.log(error);
+        alert("Found no reports.");
+        return;
+      });
+    }
+
+
+
+    // Sort by all
+    else {
+      this.reportService.getReportsByAll(reportForm.reporttype, reportForm.userId, reportForm.productId)
+      .subscribe(data=> {
+        console.log(data);
+        // Clear the array of previous results
+        this.reportArray = [];
+        // Store the retrieved items from the database
+        data.forEach(element=> {
+          this.reportArray.push(element);
+        });
+
+        alert("Found a total of " + this.reportArray.length + " reports.");
+      },
+      error=> {
+        console.log(error);
+        alert("Found no reports.");
+        return;
+      });
+    }
+
+    
     
   }
 
