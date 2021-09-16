@@ -60,11 +60,8 @@ exports.findByTime = (request, response)=> {
         case 'weekly': 
             // Sort by weekly
             const curWeekDay = currentDate.getDay();
-            const otherDate = new Date(curYear+"-"+curMonth+"-"+curDay);
 
-            Report.find(
-                {$week:otherDate}
-            ).then(data=> {
+            Report.find({day:{$gte:curDay-6}, month:curMonth, year:curYear}).then(data=> {
                 response.send(data);
             })
             .catch(err=> {
