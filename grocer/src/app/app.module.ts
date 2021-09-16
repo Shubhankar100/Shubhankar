@@ -22,10 +22,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { AdminPortalComponent } from "./admin/admin-portal/admin-portal.component";
+import { AdminSandboxComponent } from './admin-sandbox/admin-sandbox.component';
 import { LoginComponent } from "./login/login.component";
 import { AddProductsComponent } from "./admin/add-products/add-products.component";
 import { DeleteProductsComponent } from "./admin/delete-products/delete-products.component";
-import {UpdateProductsComponent} from "./admin/update-products/update-products.component"
+import { UpdateProductsComponent } from "./admin/update-products/update-products.component"
 import { EmployeePanelComponent } from './employee-panel/employee-panel.component';
 
 @NgModule({
@@ -40,7 +41,7 @@ import { EmployeePanelComponent } from './employee-panel/employee-panel.componen
     AddProductsComponent,
     DeleteProductsComponent,
     UpdateProductsComponent,
-
+    AdminSandboxComponent,
     EmployeePanelComponent
   ],
   imports: [
