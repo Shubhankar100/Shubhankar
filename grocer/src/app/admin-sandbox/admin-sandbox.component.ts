@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { EmployeeService } from '../services/employee.service';
+import { ReportService } from '../services/reports.service';
 
 @Component({
   selector: 'app-admin-sandbox',
@@ -9,7 +10,8 @@ import { EmployeeService } from '../services/employee.service';
 })
 export class AdminSandboxComponent implements OnInit {
 
-  constructor(private employeeService:EmployeeService) { }
+  constructor(private employeeService:EmployeeService,
+              private reportService:ReportService) { }
 
   ngOnInit(): void {
   }
@@ -32,7 +34,7 @@ export class AdminSandboxComponent implements OnInit {
     .subscribe(
       response=> {
         console.log(response);
-        alert("Employee created successfully!");
+        alert("Employee created successfully! The ID is: " + empId);
       },
       error=> {
         console.log(error);
@@ -57,7 +59,20 @@ export class AdminSandboxComponent implements OnInit {
   }
 
   generateReports(reportRef:NgForm): void {
-    
+    let reportForm = reportRef.value;
+
+    let generatedReports = [];
+
+    this.reportService.getReportsByTime(reportForm.reporttype)
+      .subscribe(data=> {
+        generatedReports = data;
+        console.log(data);
+        alert("Found a total of " + generatedReports.length);
+      },
+      error=> {
+        console.log(error);
+        alert("Found no reports.");
+      });
   }
 
 }
